@@ -18,7 +18,6 @@ import com.core.logger.SLog;
 import com.core.util.image.OverlayImage;
 import com.core.util.qrcode.SQRCode;
 
-
 @RestController
 @RequestMapping("/qrcode")
 public class QRCodeController {
@@ -26,7 +25,7 @@ public class QRCodeController {
 	@RequestMapping(value = "/background/{url:.+}", method = RequestMethod.GET)
 	public ResponseEntity<Resource> QRCodeWithBG(@PathVariable String url) throws Exception {
 		SLog.info.print("start generate QRCode");
-		SQRCode.GenerateQRCodeWithBG("https://brojum.com", 900, 900, System.getProperty("user.dir") +"/"+ "logo.png", System.getProperty("user.dir") +"/"+ "logo_new.png", Color.BLUE);
+		SQRCode.GenerateQRCodeWithBG(url, 900, 900, System.getProperty("user.dir") +"/"+ "logo.png", System.getProperty("user.dir") +"/"+ "logo_new.png", Color.BLUE);
 		HttpHeaders headers = new HttpHeaders();
 		String path = System.getProperty("user.dir") +"/"+ "logo_new.png";
 		File file = new File(path);
@@ -40,7 +39,7 @@ public class QRCodeController {
 	public ResponseEntity<Resource> QRCodeWithLogo(@PathVariable String url) throws Exception {
 		SLog.info.print("start generate QRCode");
 		
-		SQRCode.GenerateQRCodeWithLogo("https://brojum.com", System.getProperty("user.dir") +"/"+ "logo.png", System.getProperty("user.dir") +"/"+ "qrcode.png", "png", 1000, 1000);
+		SQRCode.GenerateQRCodeWithLogo(url, System.getProperty("user.dir") +"/"+ "logo.png", System.getProperty("user.dir") +"/"+ "qrcode.png", "png", 1000, 1000);
 		
 		String imageOriginal = System.getProperty("user.dir") + "/qrcode.png"; 
 		String imageOverlay = System.getProperty("user.dir")+"/"+"scanme.PNG"; 
@@ -71,6 +70,4 @@ public class QRCodeController {
 		headers.setContentType(MediaType.IMAGE_PNG);
 		return ResponseEntity.ok().headers(headers).contentLength(file.length()).body(resource);
 	}
-
-
 }
