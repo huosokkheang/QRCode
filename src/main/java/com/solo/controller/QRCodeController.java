@@ -23,7 +23,6 @@ import com.core.util.qrcode.SQRCode;
 @RequestMapping("/qrcode")
 public class QRCodeController {
 	
-	/* Request Body : url, method: POST */
 	@RequestMapping(value = "/background/{url:.+}", method = RequestMethod.GET)
 	public ResponseEntity<Resource> QRCodeWithBG(@PathVariable String url) throws Exception {
 		SLog.info.print("start generate QRCode");
@@ -37,7 +36,6 @@ public class QRCodeController {
 		return ResponseEntity.ok().headers(headers).contentLength(file.length()).body(resource);
 	}
 	
-	/* Request Body : url, method: POST */
 	@RequestMapping(value = "/logo/{url:.+}", method = RequestMethod.GET)
 	public ResponseEntity<Resource> QRCodeWithLogo(@PathVariable String url) throws Exception {
 		SLog.info.print("start generate QRCode");
