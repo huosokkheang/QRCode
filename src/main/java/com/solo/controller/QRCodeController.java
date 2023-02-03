@@ -78,7 +78,7 @@ public class QRCodeController {
 		String QRCodeWifi = System.getProperty("user.dir") + "/wifi.png";
 		
 		//Generate QRCode
-		SQRCode.generateQRCodeWifi_WPA_WPA2_WPA3(wifiName, wifiPass, 500, 500, QRCodeWifi);
+		SQRCode.generateQRCodeWifi_WPA_WPA2_WPA3(wifiName, wifiPass, 1000, 1000, QRCodeWifi);
 		
 		HttpHeaders headers = new HttpHeaders();
 		String path = System.getProperty("user.dir") +"/"+ "wifi.png";
