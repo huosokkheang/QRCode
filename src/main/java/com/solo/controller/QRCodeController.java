@@ -4,6 +4,8 @@ import java.awt.Color;
 import java.io.File;
 import java.io.FileInputStream;
 
+import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.core.io.InputStreamResource;
 import org.springframework.core.io.Resource;
 import org.springframework.http.HttpHeaders;
@@ -15,27 +17,25 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.core.logger.SLog;
-import com.core.util.image.OverlayImage;
 import com.core.util.qrcode.SQRCode;
-
+import com.core.util.qrcode.SQRCodeToByte;
 @RestController
 @RequestMapping("/qrcode")
 public class QRCodeController {
 	
-	@RequestMapping(value = "/background/{url:.+}", method = RequestMethod.GET)
-	public ResponseEntity<Resource> QRCodeWithBG(@PathVariable String url) throws Exception {
+	@RequestMapping(value = "/redirectly", method = RequestMethod.GET)
+	public ResponseEntity<Resource> QRCodeWithBG() throws Exception {
 		
 		//Write log
 		SLog.info.print("start generate QRCode");
 		
 		//Generate QRCode
-		String originalLogo = System.getProperty("user.dir") +"/"+ "logo.png";
+		String originalLogo = System.getProperty("user.dir") +"/"+ "logo.PNG";
 		String newLogo = System.getProperty("user.dir") +"/"+ "logo_new.png";
-		SQRCode.GenerateQRCodeWithBG(url, 900, 900, originalLogo, newLogo, Color.RED);
+		SQRCode.GenerateQRCodeWithBG("www.google.com", 900, 900, originalLogo, newLogo, Color.BLUE);
 		
 		HttpHeaders headers = new HttpHeaders();
-		String path = System.getProperty("user.dir") +"/"+ "logo_new.png";
-		File file = new File(path);
+		File file = new File(newLogo);
 		InputStreamResource resource = new InputStreamResource(new FileInputStream(file));
 		SLog.info.print("end generate QRCode");
 		headers.setContentType(MediaType.IMAGE_PNG);
@@ -43,49 +43,20 @@ public class QRCodeController {
 	}
 	
 	@RequestMapping(value = "/logo/{url:.+}", method = RequestMethod.GET)
-	public ResponseEntity<Resource> QRCodeWithLogo(@PathVariable String url) throws Exception {
+	public ResponseEntity<byte[]> QRCodeWithLogo(@PathVariable("url") String url) throws Exception {
 		
 		//Write log
 		SLog.info.print("start generate QRCode");
-		
 		//Generate QRCode
 		String originalLogo = System.getProperty("user.dir") +"/"+ "logo.png";
-		String newLogo = System.getProperty("user.dir") +"/"+ "qrcode.png";
-		SQRCode.GenerateQRCodeWithLogo(url, originalLogo, newLogo, "png", 1000, 1000);
-		
-		//Set image scan me ( X, Y )
-		String imageOriginal = System.getProperty("user.dir") + "/qrcode.png"; 
-		String imageOverlay = System.getProperty("user.dir")+"/"+"scanme.PNG"; 
-		String output_location = System.getProperty("user.dir")+"/"+"qrcode.png";
-		int x = 420; 
-		int y = 870;
-		OverlayImage.ApplyOverlay(imageOriginal, imageOverlay, output_location, x, y);
-		
-		HttpHeaders headers = new HttpHeaders();
-		String path = System.getProperty("user.dir") +"/"+ "qrcode.png";
-		File file = new File(path);
-		InputStreamResource resource = new InputStreamResource(new FileInputStream(file));
-		SLog.info.print("end generate QRCode");
-		headers.setContentType(MediaType.IMAGE_PNG);
-		return ResponseEntity.ok().headers(headers).contentLength(file.length()).body(resource);
+		return SQRCodeToByte.GenerateQRCodeWithLogo(url, originalLogo, 1000, 1000);
 	}
 
 	@RequestMapping(value = "/qrcodeWifi/{wifiName:.+}/{wifiPass:.+}", method = RequestMethod.GET)
-	public ResponseEntity<Resource> QRCode_wifi(@PathVariable String wifiName, @PathVariable String wifiPass) throws Exception {
+	public ResponseEntity<byte[]> QRCode_wifi(@PathVariable("wifiName") String wifiName, @PathVariable("wifiPass") String wifiPass, HttpServletResponse response) throws Exception {
 		
 		//Write log
 		SLog.info.print("start generate QRCode Wifi");
-		String QRCodeWifi = System.getProperty("user.dir") + "/wifi.png";
-		
-		//Generate QRCode
-		SQRCode.generateQRCodeWifi_WPA_WPA2_WPA3(wifiName, wifiPass, 1000, 1000, QRCodeWifi);
-		
-		HttpHeaders headers = new HttpHeaders();
-		String path = System.getProperty("user.dir") +"/"+ "wifi.png";
-		File file = new File(path);
-		InputStreamResource resource = new InputStreamResource(new FileInputStream(file));
-		SLog.info.print("end generate QRCode");
-		headers.setContentType(MediaType.IMAGE_PNG);
-		return ResponseEntity.ok().headers(headers).contentLength(file.length()).body(resource);
+		return SQRCodeToByte.generateQRCodeWifi_WPA_WPA2_WPA3(wifiName, wifiPass, 1000, 1000);
 	}
 }
