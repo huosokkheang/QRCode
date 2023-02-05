@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.core.logger.SLog;
+import com.core.util.image.OverlayImage;
 import com.core.util.qrcode.SQRCode;
 import com.core.util.qrcode.SQRCodeToByte;
 @RestController
@@ -58,5 +59,27 @@ public class QRCodeController {
 		//Write log
 		SLog.info.print("start generate QRCode Wifi");
 		return SQRCodeToByte.generateQRCodeWifi_WPA_WPA2_WPA3(wifiName, wifiPass, 1000, 1000);
+	}
+	
+	@RequestMapping(value = "/scanMe/{url:.+}", method = RequestMethod.GET)
+	public ResponseEntity<Resource> QRCodeWithLogoScanMe(@PathVariable String url) throws Exception {
+		SLog.info.print("start generate QRCode");
+		
+		SQRCode.GenerateQRCodeWithLogo("https://brojum.com", System.getProperty("user.dir") +"/"+ "logo.png", System.getProperty("user.dir") +"/"+ "qrcode.png", "png", 1000, 1000);
+		
+		String imageOriginal = System.getProperty("user.dir") + "/qrcode.png"; 
+		String imageOverlay = System.getProperty("user.dir")+"/"+"scanme.PNG"; 
+		String output_location = System.getProperty("user.dir")+"/"+"qrcode.png";
+		int x = 420; 
+		int y = 870;
+		OverlayImage.ApplyOverlay(imageOriginal, imageOverlay, output_location, x, y);
+		
+		HttpHeaders headers = new HttpHeaders();
+		String path = System.getProperty("user.dir") +"/"+ "qrcode.png";
+		File file = new File(path);
+		InputStreamResource resource = new InputStreamResource(new FileInputStream(file));
+		SLog.info.print("end generate QRCode");
+		headers.setContentType(MediaType.IMAGE_PNG);
+		return ResponseEntity.ok().headers(headers).contentLength(file.length()).body(resource);
 	}
 }
