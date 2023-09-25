@@ -2,6 +2,14 @@
 
 Doc: https://huosokkheang.github.io/Solo-Framework
 
-![logo](https://user-images.githubusercontent.com/35053923/216534163-8e7b90c2-a016-4fac-a251-3f990ac07526.png)
-![qrcodeWifi](https://user-images.githubusercontent.com/35053923/216534180-811006f9-01c5-42b2-80c0-ae0db5e0a3d4.png)
-![background](https://user-images.githubusercontent.com/35053923/216534188-447d0108-7dcc-4839-b20a-3974754435b6.png)
+#QRCode with Background
+![BG](https://github.com/huosokkheang/QRCode/assets/35053923/4e37562f-1306-464b-9fcc-95410be545e1)
+
+#QRCode with Logo
+![logo](https://github.com/huosokkheang/QRCode/assets/35053923/0601793b-421e-4a97-b7a6-6d050ed6ed90)
+
+#QRCode Wifi
+![wifi](https://github.com/huosokkheang/QRCode/assets/35053923/6e41b3d5-8520-4da9-95f7-ed99c316d3ce)
+
+#QRcode with logo and text ScanMe
+![logoWithText](https://github.com/huosokkheang/QRCode/assets/35053923/6caf47b6-1701-46c6-b82e-cc1462a32c7f)
