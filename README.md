@@ -2,10 +2,10 @@
 
 Doc: https://huosokkheang.github.io/Solo-Framework
 
-1.[QRCode with Background](http://194.233.79.158:8080/QRCodeGenerate/qrcode/redirectly/Cambodia) \n
-2.[QRCode with Logo](http://194.233.79.158:8080/QRCodeGenerate/qrcode/logo/Cambodia) \n
-3.[QRCode Wifi](http://194.233.79.158:8080/QRCodeGenerate/qrcode/qrcodeWifi/Cambodia/123456) \n
-4.[QRcode with logo and text ScanMe](http://194.233.79.158:8080/QRCodeGenerate/qrcode/scanMe/Cambodia) \n
+1. [QRCode with Background](http://194.233.79.158:8080/QRCodeGenerate/qrcode/redirectly/Cambodia)
+2. [QRCode with Logo](http://194.233.79.158:8080/QRCodeGenerate/qrcode/logo/Cambodia)
+3. [QRCode Wifi](http://194.233.79.158:8080/QRCodeGenerate/qrcode/qrcodeWifi/Cambodia/123456)
+4. [QRcode with logo and text ScanMe](http://194.233.79.158:8080/QRCodeGenerate/qrcode/scanMe/Cambodia)
 
 # QRCode with Background
 ![BG](https://github.com/huosokkheang/QRCode/assets/35053923/4e37562f-1306-464b-9fcc-95410be545e1)
