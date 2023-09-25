@@ -13,6 +13,11 @@ repositories {
 	mavenCentral()
 }
 
+bootWar {
+    baseName = 'QRCodeGenerate'
+    archiveName 'QRCodeGenerate.war'
+}
+
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'

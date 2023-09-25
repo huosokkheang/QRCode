@@ -1,0 +1,96 @@
+{
+	"info": {
+		"_postman_id": "73669e3f-3551-4982-93c2-7e1b76d35ee1",
+		"name": "QRCode",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2619371",
+		"_collection_link": "https://lunar-crescent-123498.postman.co/workspace/My-Workspace~518c9eb0-e33a-4b74-8217-4146a6fb1620/collection/2619371-73669e3f-3551-4982-93c2-7e1b76d35ee1?action=share&source=collection_link&creator=2619371"
+	},
+	"item": [
+		{
+			"name": "QRCode With BG",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/qrcode/redirectly/Cambodia",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"qrcode",
+						"redirectly",
+						"Cambodia"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "QRCode with Logo",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/qrcode/logo/Cambodia",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"qrcode",
+						"logo",
+						"Cambodia"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "QRCode Wifi",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/qrcode/qrcodeWifi/Cambodia/123456",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"qrcode",
+						"qrcodeWifi",
+						"Cambodia",
+						"123456"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "QRCode with textScacnMe",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/qrcode/scanMe/Cambodia",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"qrcode",
+						"scanMe",
+						"Cambodia"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
