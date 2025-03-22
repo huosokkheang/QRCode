@@ -2,13 +2,15 @@
 
 Doc: https://huosokkheang.github.io/Solo-Framework
 
-1.http://localhost:8080/qrcode/background ( QRCode with Background )
-2.http://localhost:8080/qrcode/byte ( QRCode with logo as byte )
-3.http://localhost:8080/qrcode/file ( QRCode with logo as file )
-4.http://localhost:8080/qrcode/generateQRCodeWiFi ( QRCode Connect WiFi )
-5.http://localhost:8080/qrcode/generateQRCode ( QRCode with Text Under QRCode )
-6. http://localhost:8080/qrcode/QRCode ( QRCode normal )
-7.http://localhost:8080/qrcode/readQRCode ( Decode QRCode )
+1. http://localhost:8080/qrcode/background ( QRCode with Background )
+2. http://localhost:8080/qrcode/byte ( QRCode with logo as byte )
+3. http://localhost:8080/qrcode/file ( QRCode with logo as file )
+4. http://localhost:8080/qrcode/generateQRCodeWiFi ( QRCode Connect WiFi )
+5. http://localhost:8080/qrcode/generateQRCode ( QRCode with Text Under QRCode )
+6. http://localhost:8080/qrcode/ ( QRCode normal )
+7. http://localhost:8080/qrcode/readQRCode ( Decode QRCode )
+8. http://localhost:8080/BarCode ( BarCode normal )
+9. http://localhost:8080/BarCode/EAN13/978020137962 ( BarCode with type of BarCode Standard )
 
 # QRCode with Background
 ![background](https://github.com/user-attachments/assets/abe40947-1ee1-427f-939b-6416801f5e41)
@@ -30,3 +32,10 @@ Doc: https://huosokkheang.github.io/Solo-Framework
 
 # Decode QRCode
 ![readContentQRCode](https://github.com/user-attachments/assets/964b8944-e309-412c-9763-999657754483)
+
+# BarCode
+![image](https://github.com/user-attachments/assets/49be46ad-77f4-4530-a336-970aaa1b0ada)
+
+# BarCode with type of BarCode Standard
+![image](https://github.com/user-attachments/assets/0caa7d7e-9432-4bb2-99e2-fc7d538c4d4c)
+
