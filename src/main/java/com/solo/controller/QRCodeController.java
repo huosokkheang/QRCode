@@ -41,12 +41,12 @@ public class QRCodeController {
 		if(operationSystem.contains("Windows")) {
 			data = System.getProperty("user.dir") + "/";
 		}else {
-			data = "/opt/image";
+			data = "/opt/photos";
 		}
 		return data;
 	}
 	
-	@GetMapping(value = "/QRCode", produces = MediaType.IMAGE_PNG_VALUE)
+	@GetMapping(value = "/", produces = MediaType.IMAGE_PNG_VALUE)
 	public ResponseEntity<byte[]> generateQRCode() throws SException {
 		return SQRCodeToByte.GenerateQRCode("Content", 500, 500);
 	}
