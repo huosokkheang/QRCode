@@ -2,19 +2,31 @@
 
 Doc: https://huosokkheang.github.io/Solo-Framework
 
-1. [QRCode with Background](https://brojum.com/QRCodeGenerate/qrcode/redirectly/Cambodia)
-2. [QRCode with Logo](https://brojum.com/QRCodeGenerate/qrcode/logo/Cambodia)
-3. [QRCode Wifi](https://brojum.com/QRCodeGenerate/qrcode/qrcodeWifi/Cambodia/123456)
-4. [QRcode with logo and text ScanMe](https://brojum.com/QRCodeGenerate/qrcode/scanMe/Cambodia)
+1.http://localhost:8080/qrcode/background ( QRCode with Background )
+2.http://localhost:8080/qrcode/byte ( QRCode with logo as byte )
+3.http://localhost:8080/qrcode/file ( QRCode with logo as file )
+4.http://localhost:8080/qrcode/generateQRCodeWiFi ( QRCode Connect WiFi )
+5.http://localhost:8080/qrcode/generateQRCode ( QRCode with Text Under QRCode )
+6. http://localhost:8080/qrcode/QRCode ( QRCode normal )
+7.http://localhost:8080/qrcode/readQRCode ( Decode QRCode )
 
 # QRCode with Background
-![BG](https://github.com/huosokkheang/QRCode/assets/35053923/4e37562f-1306-464b-9fcc-95410be545e1)
+![background](https://github.com/user-attachments/assets/abe40947-1ee1-427f-939b-6416801f5e41)
 
-# QRCode with Logo
-![logo](https://github.com/huosokkheang/QRCode/assets/35053923/0601793b-421e-4a97-b7a6-6d050ed6ed90)
+# QRCode with logo as byte
+![byte_logo](https://github.com/user-attachments/assets/cee4428b-7bec-422d-b811-4bb1bbf7d113)
 
-# QRCode Wifi
-![wifi](https://github.com/huosokkheang/QRCode/assets/35053923/6e41b3d5-8520-4da9-95f7-ed99c316d3ce)
+# QRCode with logo as file
+![file_logo](https://github.com/user-attachments/assets/d65bcbb7-f9db-4149-9514-9dda40a3e12e)
 
-# QRcode with logo and text ScanMe
-![logoWithText](https://github.com/huosokkheang/QRCode/assets/35053923/6caf47b6-1701-46c6-b82e-cc1462a32c7f)
+# QRCode Connect WiFi
+![generateQRCodeWiFi](https://github.com/user-attachments/assets/936f9588-734d-47c3-a178-fb0d8a5a89af)
+
+# QRCode with Text Under QRCode
+![scanMe](https://github.com/user-attachments/assets/84890871-14ac-42ba-a00a-00b49164834f)
+
+# QRCode normal
+![QRCode](https://github.com/user-attachments/assets/6da42576-cf3e-47a1-997d-1d7b86cf7e99)
+
+# Decode QRCode
+![readContentQRCode](https://github.com/user-attachments/assets/964b8944-e309-412c-9763-999657754483)
