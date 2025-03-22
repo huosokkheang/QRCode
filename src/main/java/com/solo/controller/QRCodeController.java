@@ -116,7 +116,7 @@ public class QRCodeController {
     	
     	Solo wifi = new Solo();
     	wifi.setString("wifiName", "Notebook");
-    	wifi.setString("password", "8888@9999abc");
+    	wifi.setString("password", "8888999955552222");
     	String WiFiPattern = QRCodeWiFiSecureTypeCode.generateQRCode(QRCodeWiFiSecureTypeCode.WPA_WPA2_WPA3, wifi);
     	System.out.println(WiFiPattern);
     	Solo param = new Solo();
