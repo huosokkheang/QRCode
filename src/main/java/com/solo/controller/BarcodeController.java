@@ -24,7 +24,7 @@ import com.core.util.QrBarcode.BarcodeGenerator;
 @RequestMapping("/BarCode")
 public class BarcodeController {
 
-	@GetMapping(value = "", produces = IMAGE_PNG_VALUE)
+	@GetMapping(value = "/{code}", produces = IMAGE_PNG_VALUE)
     public void generateBarcodeWithText(HttpServletResponse response, @PathVariable("code") final String code) {
         try {
         	Solo solo = new Solo();
