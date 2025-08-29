@@ -24,11 +24,11 @@ import com.core.util.QrBarcode.BarcodeGenerator;
 @RequestMapping("/BarCode")
 public class BarcodeController {
 
-	@GetMapping(value = "", produces = IMAGE_PNG_VALUE)
-    public void generateBarcodeWithText(HttpServletResponse response) {
+	@GetMapping(value = "/{code}", produces = IMAGE_PNG_VALUE)
+    public void generateBarcodeWithText(HttpServletResponse response, @PathVariable("code") final String code) {
         try {
         	Solo solo = new Solo();
-        	solo.setString("code", "12365498745652");
+        	solo.setString("code", code);
             byte[] bs = BarcodeGenerator.generateBarcodeWithTextByte(response, solo);
         	response.setContentType(MediaType.IMAGE_JPEG_VALUE);
     		StreamUtils.copy(bs, response.getOutputStream());
